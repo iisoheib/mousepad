@@ -247,7 +247,7 @@
       slideIndex++;
       if (slideIndex > slides.length) slideIndex = 1;
       slides[slideIndex - 1].style.display = "block";
-      setTimeout(showSlides, 1000);
+      setTimeout(showSlides, 2000);
     }
     showSlides();
 
@@ -256,9 +256,10 @@
     if (window.location.search.includes("fullname=")) {
       const popup = document.getElementById("popup");
       popup.classList.add("show");
-      setTimeout(() => popup.classList.remove("show"), 3000);
+      setTimeout(() => popup.classList.remove("show"), 10000);
     }
   });
   </script>
 </body>
 </html>
+
