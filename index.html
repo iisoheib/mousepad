@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🔥 RGB Gaming Mousepad XL 🔥</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+
+    body { background: #0f0f0f; color: #f5f5f5; line-height: 1.6; }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, rgba(40, 0, 60, 0.95), rgba(0, 0, 0, 0.9));
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+    .hero h1 {
+      font-size: 2.3rem;
+      margin-bottom: 1rem;
+      color: #fff;
+      text-shadow: 0 0 12px rgba(140,0,255,0.7);
+    }
+    .hero p { font-size: 1.1rem; color: #ddd; margin-bottom: 1rem; }
+    .flag { 
+      display: inline-block; 
+      background: #00ffc8; 
+      color: #000; 
+      padding: 0.4rem 1rem; 
+      border-radius: 20px; 
+      font-weight: bold; 
+      margin: 0.5rem; 
+      animation: pulse 1.5s infinite; 
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.1); opacity: 0.8; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    .price { font-size: 1.5rem; font-weight: bold; color: #ff4df2; margin-top: 0.5rem; }
+    .cta-btn {
+      background: linear-gradient(90deg, #ff00ff, #00ffc8);
+      color: #000;
+      border: none;
+      padding: 0.8rem 1.8rem;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 1rem;
+      margin-top: 1rem;
+      transition: transform 0.2s;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .cta-btn:hover { transform: scale(1.05); }
+
+    /* Gallery */
+    .gallery { padding: 2rem 1rem; text-align: center; }
+    .gallery h2 { margin-bottom: 1rem; color: #00ffc8; text-shadow: 0 0 10px rgba(0,255,200,0.6); }
+    .slider { position: relative; max-width: 600px; margin: auto; overflow: hidden; border-radius: 15px; }
+    .slide { display: none; }
+    .slide img { max-width: 95%; height: auto; margin: 0 auto; border-radius: 12px; box-shadow: 0 0 15px rgba(0,0,0,0.5); }
+
+    /* Order Form */
+    .order { padding: 2rem 1rem; background: rgba(20,20,20,0.9); text-align: center; }
+    .order h2 { margin-bottom: 1rem; color: #ff00ff; }
+    form { max-width: 500px; margin: auto; text-align: left; }
+    form input, form select {
+      width: 100%; padding: 0.8rem; margin-bottom: 1rem;
+      border: none; border-radius: 8px;
+    }
+    form button {
+      width: 100%; background: linear-gradient(90deg,#00ffc8,#ff00ff);
+      border: none; padding: 0.8rem; border-radius: 30px; font-weight: bold;
+      cursor: pointer; font-size: 1rem;
+    }
+
+    /* Features */
+    .features { padding: 2rem 1rem; text-align: center; }
+    .features h2 { margin-bottom: 1.5rem; color: #00ffc8; }
+    .features ul { list-style: none; max-width: 600px; margin: auto; }
+    .features li { margin: 0.8rem 0; padding: 0.6rem; background: rgba(50,50,50,0.6); border-radius: 8px; }
+
+    /* Popup */
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.8);
+      color: #fff;
+      z-index: 1000;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+    }
+    .popup.show { display: flex; }
+    .popup-content {
+      background: #111;
+      padding: 2rem;
+      border-radius: 12px;
+      max-width: 400px;
+      box-shadow: 0 0 20px #00ffc8;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 1.6rem; }
+      .cta-btn { font-size: 0.9rem; }
+      .price { font-size: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>🔥 RGB Gaming Mousepad XL 🔥</h1>
+    <p>لوحة ماوس مضيئة RGB فائقة الحجم – سطح ناعم، قاعدة مانعة للانزلاق، 13 وضعية إضاءة. السعر 3200 DA فقط!</p>
+    <div class="flag">🚚 توصيل مجاني</div>
+    <div class="price">💰 3200 DA</div>
+    <a href="#orderForm" class="cta-btn">احصل عليه الان</a>
+  </section>
+
+  <!-- Gallery -->
+  <section class="gallery">
+    <h2>✨ Gallery ✨</h2>
+    <div class="slider">
+      <div class="slide"><img src="1.jpg" alt="Mousepad 1"></div>
+      <div class="slide"><img src="2.jpg" alt="Mousepad 2"></div>
+      <div class="slide"><img src="3.jpg" alt="Mousepad 3"></div>
+      <div class="slide"><img src="4.jpg" alt="Mousepad 4"></div>
+      <div class="slide"><img src="5.jpg" alt="Mousepad 5"></div>
+      <div class="slide"><img src="6.jpg" alt="Mousepad 6"></div>
+    </div>
+  </section>
+
+  <!-- Order Form -->
+  <section class="order" id="orderSection">
+    <h2>🛒 احصل عليه الان بسعر تنافسي</h2>
+    <form id="orderForm" action="https://submit-form.com/lhCPipVy8" method="POST">
+ <input type="hidden" name="_redirect" value="https://iisoheib.github.io/mousepad/index.html" />
+      <input type="text" name="fullname" placeholder="Full Name" required>
+      <input type="tel" name="phone" placeholder="Phone Number" pattern="\d{10}" 
+       title="Please enter a 10-digit phone number" required>
+      <select name="wilaya" required>
+        <option value="">Select Wilaya</option>
+        <option value="Adrar">Adrar</option>
+        <option value="Chlef">Chlef</option>
+        <option value="Laghouat">Laghouat</option>
+        <option value="Oum El Bouaghi">Oum El Bouaghi</option>
+        <option value="Batna">Batna</option>
+        <option value="Béjaïa">Béjaïa</option>
+        <option value="Biskra">Biskra</option>
+        <option value="Béchar">Béchar</option>
+        <option value="Blida">Blida</option>
+        <option value="Bouira">Bouira</option>
+        <option value="Tamanrasset">Tamanrasset</option>
+        <option value="Tébessa">Tébessa</option>
+        <option value="Tlemcen">Tlemcen</option>
+        <option value="Tiaret">Tiaret</option>
+        <option value="Tizi Ouzou">Tizi Ouzou</option>
+        <option value="Algiers">Algiers</option>
+        <option value="Djelfa">Djelfa</option>
+        <option value="Jijel">Jijel</option>
+        <option value="Sétif">Sétif</option>
+        <option value="Saïda">Saïda</option>
+        <option value="Skikda">Skikda</option>
+        <option value="Sidi Bel Abbès">Sidi Bel Abbès</option>
+        <option value="Annaba">Annaba</option>
+        <option value="Guelma">Guelma</option>
+        <option value="Constantine">Constantine</option>
+        <option value="Médéa">Médéa</option>
+        <option value="Mostaganem">Mostaganem</option>
+        <option value="M'Sila">M'Sila</option>
+        <option value="Mascara">Mascara</option>
+        <option value="Ouargla">Ouargla</option>
+        <option value="Oran">Oran</option>
+        <option value="El Bayadh">El Bayadh</option>
+        <option value="Illizi">Illizi</option>
+        <option value="Bordj Bou Arréridj">Bordj Bou Arréridj</option>
+        <option value="Boumerdès">Boumerdès</option>
+        <option value="El Tarf">El Tarf</option>
+        <option value="Tindouf">Tindouf</option>
+        <option value="Tissemsilt">Tissemsilt</option>
+        <option value="El Oued">El Oued</option>
+        <option value="Khenchela">Khenchela</option>
+        <option value="Souk Ahras">Souk Ahras</option>
+        <option value="Tipaza">Tipaza</option>
+        <option value="Mila">Mila</option>
+        <option value="Aïn Defla">Aïn Defla</option>
+        <option value="Naama">Naama</option>
+        <option value="Aïn Témouchent">Aïn Témouchent</option>
+        <option value="Ghardaïa">Ghardaïa</option>
+        <option value="Relizane">Relizane</option>
+        <option value="El M'Ghair">El M'Ghair</option>
+        <option value="El Meniaa">El Meniaa</option>
+        <option value="Ouled Djellal">Ouled Djellal</option>
+        <option value="Bordj Badji Mokhtar">Bordj Badji Mokhtar</option>
+        <option value="Béni Abbès">Béni Abbès</option>
+        <option value="Timimoun">Timimoun</option>
+        <option value="Touggourt">Touggourt</option>
+        <option value="Djanet">Djanet</option>
+        <option value="In Salah">In Salah</option>
+        <option value="In Guezzam">In Guezzam</option>
+      </select>
+      <input type="text" name="commune" placeholder="Commune" required>
+      <input type="text" name="address" placeholder="Address" required>
+      <input type="number" name="quantity" min="1" value="1" required>
+      <button type="submit">✅ تاكيد الطلبية</button>
+    </form>
+  </section>
+
+  <!-- Features -->
+  <section class="features">
+    <h2>⚡ Key Features</h2>
+    <ul>
+      <li>سطح ناعم لتحكم سلس ودقيق 🎯</li>
+      <li>قاعدة مطاطية مانعة للانزلاق 🛡️</li>
+      <li>إضاءة RGB بـ 13 وضعية ✨</li>
+      <li>كابل USB طوله 1.8m 🔌</li>
+      <li>سهل التنظيف 🧼</li>
+      <li>حجم 800mm × 300mm 📏</li>
+    </ul>
+  </section>
+
+  <!-- Popup -->
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <h3>✅ Order Submitted!</h3>
+      <p>شكراً لطلبك، سيتم التواصل معك قريباً 📞</p>
+    </div>
+  </div>
+
+  <script>
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener("click", function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute("href"))
+          .scrollIntoView({ behavior: "smooth" });
+      });
+    });
+
+    // Gallery auto slider
+    let slideIndex = 0;
+    const slides = document.querySelectorAll(".slide");
+    function showSlides() {
+      slides.forEach(s => s.style.display = "none");
+      slideIndex++;
+      if (slideIndex > slides.length) slideIndex = 1;
+      slides[slideIndex - 1].style.display = "block";
+      setTimeout(showSlides, 1000);
+    }
+    showSlides();
+
+    // Formspark submission
+      window.addEventListener("DOMContentLoaded", () => {
+    if (window.location.search.includes("fullname=")) {
+      const popup = document.getElementById("popup");
+      popup.classList.add("show");
+      setTimeout(() => popup.classList.remove("show"), 3000);
+    }
+  });
+  </script>
+</body>
+</html>
