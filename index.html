@@ -246,39 +246,49 @@ src="https://www.facebook.com/tr?id=777777371281087&ev=PageView&noscript=1"
     </div>
   </div>
 
-  <script>
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener("click", function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute("href"))
-          .scrollIntoView({ behavior: "smooth" });
-      });
+ <script>
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function(e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute("href"))
+        .scrollIntoView({ behavior: "smooth" });
     });
+  });
 
-    // Gallery auto slider
-    let slideIndex = 0;
-    const slides = document.querySelectorAll(".slide");
-    function showSlides() {
-      slides.forEach(s => s.style.display = "none");
-      slideIndex++;
-      if (slideIndex > slides.length) slideIndex = 1;
-      slides[slideIndex - 1].style.display = "block";
-      setTimeout(showSlides, 2000);
-    }
-    showSlides();
+  // Gallery auto slider
+  let slideIndex = 0;
+  const slides = document.querySelectorAll(".slide");
+  function showSlides() {
+    slides.forEach(s => s.style.display = "none");
+    slideIndex++;
+    if (slideIndex > slides.length) slideIndex = 1;
+    slides[slideIndex - 1].style.display = "block";
+    setTimeout(showSlides, 2000);
+  }
+  showSlides();
 
-    // Formspark submission
-      window.addEventListener("DOMContentLoaded", () => {
-    if (window.location.search.includes("fullname=")) {
+  // Popup after successful form submission
+  window.addEventListener("DOMContentLoaded", () => {
+    const urlParams = new URLSearchParams(window.location.search);
+
+    if (urlParams.has("fullname")) {
       const popup = document.getElementById("popup");
       popup.classList.add("show");
+
+      // Auto-hide after 10 seconds
       setTimeout(() => popup.classList.remove("show"), 10000);
+
+      // Remove query params so popup won’t reappear on refresh
+      const newUrl = window.location.origin + window.location.pathname;
+      window.history.replaceState({}, document.title, newUrl);
     }
   });
-  </script>
+</script>
+
 </body>
 </html>
+
 
 
 
