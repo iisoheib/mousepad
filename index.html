@@ -246,7 +246,7 @@ src="https://www.facebook.com/tr?id=777777371281087&ev=PageView&noscript=1"
     </div>
   </div>
 
- <script>
+<script>
   // Smooth scroll
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener("click", function(e) {
@@ -279,7 +279,7 @@ src="https://www.facebook.com/tr?id=777777371281087&ev=PageView&noscript=1"
       // Auto-hide after 10 seconds
       setTimeout(() => popup.classList.remove("show"), 10000);
 
-      // Remove query params so popup won’t reappear on refresh
+      // Clean URL immediately (so refresh won’t trigger it again)
       const newUrl = window.location.origin + window.location.pathname;
       window.history.replaceState({}, document.title, newUrl);
     }
@@ -288,6 +288,7 @@ src="https://www.facebook.com/tr?id=777777371281087&ev=PageView&noscript=1"
 
 </body>
 </html>
+
 
 
 
