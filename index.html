@@ -221,7 +221,7 @@ src="https://www.facebook.com/tr?id=777777371281087&ev=PageView&noscript=1"
       <input type="text" name="commune" placeholder="Commune" required>
       <input type="text" name="address" placeholder="Address" required>
       <input type="number" name="quantity" min="1" value="1" required>
-      <button type="submit">✅ تاكيد الطلبية</button>
+      <button id="submitBtn" type="submit" disabled >✅ تاكيد الطلبية</button>
     </form>
   </section>
 
@@ -289,25 +289,26 @@ src="https://www.facebook.com/tr?id=777777371281087&ev=PageView&noscript=1"
   const form = document.getElementById("orderForm");
   const submitBtn = document.getElementById("submitBtn");
 
-  form.addEventListener("submit", function(event) {
-    // If the form is NOT valid, stop submission
-    if (!form.checkValidity()) {
-      event.preventDefault();
-      submitBtn.textContent = "⚠️ يرجى ملء جميع المعلومات قبل تأكيد الطلبية";
-      submitBtn.style.background = "red";
-      setTimeout(() => {
-        submitBtn.textContent = "✅ تاكيد الطلبية";
-        submitBtn.style.background = "";
-      }, 3000); // reset after 3s
+  // راقب كل تغييرات في الفورم
+  form.addEventListener("input", () => {
+    if (form.checkValidity()) {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "✅ تاكيد الطلبية";
     } else {
-      // Prevent double submit
       submitBtn.disabled = true;
-      submitBtn.textContent = "⏳ جاري الارسال...";
+      submitBtn.textContent = "⚠️ يرجى إدخال جميع المعلومات";
     }
+  });
+
+  // لما الفورم يترسل
+  form.addEventListener("submit", () => {
+    submitBtn.disabled = true;
+    submitBtn.textContent = "⏳ جاري الإرسال...";
   });
 </script>
 </body>
 </html>
+
 
 
 
